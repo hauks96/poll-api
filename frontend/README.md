@@ -1,4 +1,4 @@
-_Author: Ægir Máni Hauksson_
+_Author: Ægir Máni Hauksson, aegir19@ru.is_
 
 This part of the project is an addon I created to test the frontend.
 # FRONTEND: SETUP AND USAGE
