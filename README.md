@@ -1,5 +1,5 @@
 # Poll API Server
-(This is the group project readme found within the src folder)
+(This is the group project readme for code found within the src folder)
 This documentation serves as a manual to the usage of the project at it's current stage. Please read through carefully before using the software.
 
 # Websocket integrations
