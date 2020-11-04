@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Websocket client test</title>
+        <link rel="stylesheet" type="text/css" href="json_pretty.css">
+        <script src="websocketJSClient.js"></script>
+    </head>
+    <body>
+        <div id="page-container">
+        <div>
+            <input type="text" id="messageIn">
+            <button id="sendButton" onclick="sendMessage()">Send</button>
+        </div>
+
+        <div id="serverRecv"></div>
+        <div id="examples">
+            <textarea id="example-text" name="w3review" rows="4" cols="50">
+TESTING METHODS TO COPY
+1. {"op": "getAllPolls", "data": {}}
+2. {"op": "getElectables", "data": {"electionID": "1"}}
+3. {"op": "getElectableDetails", "data": {"electableID": "2"}}
+4. {"op": "getRegionDetails", "data": {"regionID": "1"}}
+5. {"op": "getElection", "data": {"electionID": "2"}}
+6. {"op": "getElections", "data": {}}
+7. {"op": "createUser", "data":{"username":"peepee", "password": "peepee", "firstName": "Peter", "lastName": "Pan", "ssn": "123458787", "regionID": "1"}}
+8. {"op": "login", "data":{}, "auth": {"username":"peepee", "password": "peepee"}}
+9. {"op": "logout", "data":{}}
+10. {"op": "vote", "data":{"electableID": "1", "pollID": "1"}}
+11. {"op": "createPoll", "data":{"electionID": "1", "startDate": "2020-10-10", "endDate": "2020-10-15"}}
+12. {"op": "createElectable", "data":{"name": "Party Party", "description": "BIG PARTY!", "imageUrl": "httpsgfd"}}
+13. {"op": "getUserElectables", "data":{}}
+14. {"op": "deleteElectable", "data":{"electableID": "1"}}
+15. {"op": "createElection", "data":{"name": "BEST ELECTION EVER"}}
+16. {"op": "deleteElection", "data":{"electionID": "3"}}
+17. {"op": "addElectionRegion", "data":{"electionID": "3", "regionID": "2"}}
+18. {"op": "addElectionElectable", "data":{"electionID": "4", "electableID": "2"}}
+19. {"op": "getUserElections", "data":{}}
+20. {"op": "deletePoll", "data":{"pollID": "1"}}
+21. {"op": "getPollsBySourceName", "data": {"sourceName": "Gallup"}}
+22. {"op": "getPollsByTimeFrame", "data": {"startDate": "2020-10-20", "endDate": "2022-10-25"}}
+23. {"op": "getOverAllElectionPoll", "data":{"electionID": "1"}}
+24. {"op": "getHistoricalPollsForElection", "data": {"electionID": "1", "startDate": "2020-10-20", "endDate": "2022-11-26"}}
+25. {"op": "createRegion", "data":{"population": "20000", "name": "Mýrdalshreppur"}}
+26. {"op": "getAveragePoll", "data":{"electionID": "1"}}
+27. {"op": "getElectionStatistics", "data":{"electionID": "1"}}
+28. {"op": "getSource", "data": {"sourceID": "2"}}
+29. {"op": "getAllSources", "data": {}}
+30. {"op": "getAllRegions", "data": {}}
+31. {"op": "getUserRegions", "data": {}}
+32. {"op": "deleteRegion", "data":{"regionID": "7"}}
+33. {"op": "createParty", "data":{"name": "Party pooper", "description": "Huge PARTY!"}}
+34. {"op": "createCandidate", "data":{"name": "Party candidate", "description": "BIG PARTY!"}}
+35. {"op": "getElectionByName", "data": {"electionName": "US Presidential Election"}}
+
+
+TO USE WEBSOCKETS, RUN THE COMMUNICATOR.PY FILE AND OPEN THIS HTML.
+AFTER EACH SEND THAT IS DONE YOU HAVE TO REFRESH THE BROWSER FOR IT TO WORK AGAIN.
+
+PAY ATTENTION TO THE BROWSER CONSOLE, AND YOUR TERMINAL IF YOU ARE HAVING ISSUES.
+
+            </textarea>
+        </div>
+        </div>
+        </body>
+</html>

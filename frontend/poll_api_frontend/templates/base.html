@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+        <title>Poll Website</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'form.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'scrollbars.css' %}">
+        {% block extra_head %}
+            <!-- Here comes extra css -->
+        {% endblock %}
+    </head>
+
+    <!-- Here comes the navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <!-- Image -->
+        <a id="home-icon" class="navbar-brand" href="{% url 'home' %}">
+            <i id="fa-poll" class="fas fa-poll"></i>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li onclick="get_nav_operation('getElections')" class="nav-item">
+                    <a title="getElections" class="nav-link" href="#">Elections</a>
+                </li>
+                <li onclick="get_nav_operation('getAllPolls')" class="nav-item">
+                    <a title="getAllPolls" class="nav-link" href="#" id="getAllPolls">Polls</a>
+                </li>
+                <li onclick="get_nav_operation('getAllRegions')" class="nav-item">
+                    <a title="getAllRegions" class="nav-link" href="#" id="getAllRegion">Regions</a>
+                </li>
+                <li onclick="get_nav_operation('getAllSources')" class="nav-item">
+                    <a title="getAllSources" class="nav-link" href="#" id="getAllSources">Organizations</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav my-2 my-lg-0">
+                <li class="nav-item">
+                    <a id="login-logout" class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <body>
+        <main>
+            <div id="main-container">
+                {% block content %}
+                    <!-- Here comes the content -->
+
+                {% endblock %}
+            </div>
+        </main>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.3/umd/popper.min.js"
+        integrity="sha512-53CQcu9ciJDlqhK7UD8dZZ+TF2PFGZrOngEYM/8qucuQba+a+BXOIRsp9PoMNJI3ZeLMVNIxIfZLbG/CdHI5PA=="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" data-auto-replace-svg="nest"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="{% static 'main.js' %}"></script>
+    <script>
+        /* This is the form serializer method. It turns a form into a js object.
+        Attribute: input.name, Value: input.value
+        Call: let form_serialized = $("#myform").serializeObject();*/
+        $.fn.serializeObject = function() {
+            let object = {};
+            let form_array = this.serializeArray();
+            $.each(form_array, function() {
+                if (object[this.name]) {
+                    if (!object[this.name].push) {
+                        object[this.name] = [object[this.name]];
+                    }
+                    object[this.name].push(this.value || '');
+                } else {
+                  object[this.name] = this.value || '';
+                }
+            });
+            return object;
+        };
+
+        function get_nav_operation(operation){
+            let target_element = $('#result-content')
+            target_element.empty();
+            let args = {}
+            receive_data(target_element, operation, args)
+        }
+
+        function receive_data(target_element, op, args){
+            if(op === "getPoll" || op === "getOverallElectionPoll" || op === 'getPollWithImageSource'){
+                poll_detail_onclick(op, args);
+            }
+            else {
+                $.ajax({
+                url: "{% url 'receive-data' %}",
+                headers: {'X-CSRFToken': csrftoken},
+                data: {'op': op, 'args': JSON.stringify(args)},
+                type: "GET",
+                dataType: 'html',
+                success: function (data) {
+                    if (data) {
+                        if (op === 'login'){
+                            set_logout();
+                        }
+                        if (op === 'logout'){
+                            set_login();
+                        }
+                        /* Could also use json here to get multiple html to
+                        render in different places */
+                        // Add the http response to target element
+                        target_element.html(data);
+                    }
+                },
+                error: function (data) {
+                    target_element.html(data);
+                    }
+                });
+            }
+        }
+
+        // function triggered by home page any operation input
+        function get_any_operation(){
+            let target_element = $('#result-content')
+            target_element.empty();
+            let operation = $('#operation-choice').val();
+            let form = $('#argument-form')
+            let args = form.serializeObject();
+
+            receive_data(target_element, operation, args)
+        }
+
+        /*
+        This function takes the desired operation as argument and returns the form that must be filled out
+        to receive the data for that operation. Target element is the destination html element to render the response
+         */
+        function get_arguments_form(operation, target_element){
+            $.ajax({
+                url: "{% url 'arg-form' %}",
+                headers: {'X-CSRFToken': csrftoken},
+                data: {'op': operation},
+                type: "GET",
+                dataType: 'html',
+                success: function (data) {
+                    if (data) {
+                        /* Could also use json here to get multiple html to
+                        render in different places */
+                        // Add the http response to target element
+                        target_element.html(data);
+                    }
+                }
+            });
+        }
+        function set_logout(){
+            // Set login button to show logout
+            let login_button = $('#login-logout')
+            let url = {% url 'logout' %};
+            login_button.attr('href', url);
+            login_button.empty();
+            login_button.text('Logout');
+        }
+        function set_login(){
+            // Set logout button to show login
+            let login_button = $('#login-logout')
+            let url = {% url 'login' %};
+            login_button.attr('href', url);
+            login_button.empty();
+            login_button.text('Login');
+        }
+        // Organization link to get all polls from organization
+        function get_source_polls(operation, value){
+            let target_element = $('#result-content');
+            target_element.empty();
+            receive_data(target_element, operation, {'sourceName': value});
+        }
+        // Link via poll table
+        function get_election_from_poll(operation, value){
+            let target_element = $('#result-content');
+            target_element.empty();
+            receive_data(target_element, operation, {'electionID': value});
+        }
+
+        // Must implement that source has id to retrieve this
+        function get_source_from_poll(operation, value){
+            let target_element = $('#result-content');
+            target_element.empty();
+            receive_data(target_element, operation, {'sourceID': value});
+        }
+
+        {% if server_user.is_authenticated %}
+            $(document).ready(function (){
+                set_logout();
+            })
+        {% endif %}
+
+    </script>
+
+    {% block extra_js %}
+        <!-- Here comes additional javascript -->
+    {% endblock %}
+</html>

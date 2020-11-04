@@ -1,0 +1,47 @@
+{% load static %}
+<div id="model-container">
+    <div id="model-table" class="scrollbar-info">
+        <div class="table-title"><h4>Polls</h4></div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Election</th>
+                    <th scope="col">Organization</th>
+                    <th scope="col">Open from</th>
+                    <th scope="col">Open Until</th>
+                    <th scope="col">Poll ID</th>
+                    <th scope="col">Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for model in models %}
+                    <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>
+                        <div title="getElection" class="link-redirect" onclick="get_election_from_poll('getElection', '{{ model.election.id }}')">{{ model.election.name }}</div>
+                    </td>
+                    <td>
+                        <div class="organization-link">{{ model.organization.name }}</div>
+                    </td>
+                    <td>
+                        <span>{{ model.start_date }}</span>
+                    </td>
+                    <td>
+                        <span>{{ model.end_date }}</span>
+                    </td>
+                    <td>
+                        <span class="poll-link" href="#">{{ model.id }}</span>
+                    </td>
+                    <td>
+                        <div title="getPoll" class="poll-stats-details" id="{{ model.id }}" onclick="poll_onclick({{ model.id }})">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                    </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+

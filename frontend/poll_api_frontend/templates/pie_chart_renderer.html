@@ -1,0 +1,8 @@
+{% for chart in charts %}
+    <figure class="highcharts-figure">
+        <div id="chart-container-{{ forloop.counter }}">
+            <!-- gets rendered here -->
+        </div>
+    </figure>
+
+{% endfor %}

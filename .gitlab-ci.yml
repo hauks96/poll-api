@@ -1,0 +1,14 @@
+image: python:latest
+
+before_script:
+  - python -V
+  - pip install -r requirements.txt
+
+test:
+  script:
+    - cd src
+    - coverage erase
+    - coverage run --omit="*/interface_layer/*" --source app -m unittest discover -s test -p test_*.py
+    - coverage report
+  only:
+    - merge_requests

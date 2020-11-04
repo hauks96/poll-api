@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+{% endblock %}
+{% block content %}
+    <div id="operations-container">
+        <div id="op-table" class="scrollbar-info">
+            <div class="table-title"><h4>Available Operations</h4></div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Operation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for op in operations %}
+                        <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>
+                            <a class="operation-link" href="#">{{ op }}</a>
+                        </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <div id="input-content">
+            <input id="operation-choice" class="form-control" placeholder="type in an operation..." value="">
+            <button id="operation-submit" class="btn btn-primary" data-toggle="modal"
+                    data-target="#form-submission-modal" onclick=get_homepage_input_form()>Submit
+            </button>
+            <div id="modal-popup-container">
+                <!-- Modal PopUp form-->
+                <div class="modal fade" id="form-submission-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Just one more step!</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div>In order to retrieve the data you might have to send some arguments.</div>
+                                <div id="form-render-div">
+                                     <!-- This is where we are going to render our submission form! -->
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                        onclick=get_any_operation()>Get Data!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="result-content">
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'warning' %}
+                        <div class="alert alert-danger">{{ message }}</div>
+                    {% elif message.tags == 'success' %}
+                        <div class="alert alert-success">{{ message }}</div>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <div>Select an operation to perform from the list on the right and click submit!...</div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'pie.js' %}"></script>
+    <script>
+    // Get all data methods for the navigation bar
+    function get_nav_operation(operation){
+        let args = {}
+        let target_element = $('#result-content')
+        target_element.empty();
+
+        receive_data(target_element, operation, args);
+    }
+
+        function get_homepage_input_form(){
+            let operation = $('#operation-choice').val();
+            let target_element = $('#form-render-div')
+            get_arguments_form(operation, target_element);
+        }
+
+        $('.operation-link').on('click', function (){
+            let operation = $(this).text();
+            $('#operation-choice').val(operation);
+        })
+
+        function poll_onclick(poll_id){
+            let args = {'pollID': poll_id}
+            poll_detail_onclick('getPoll', args)
+        }
+
+        function poll_detail_onclick(operation, args){
+            console.log(operation);
+            console.log(args)
+            $.ajax({
+                url: "{% url 'poll-details' %}",
+                headers: {'X-CSRFToken': csrftoken},
+                data: {'op': operation, 'args': JSON.stringify(args)},
+                type: "GET",
+                dataType: 'json',
+                success: function (data) {
+                    if (data) {
+                        /* Could also use json here to get multiple html to
+                        render in different places */
+                        // Add the http response to target element
+                        render_poll_details_data(data);
+                    }
+                }
+            });
+        }
+
+        function render_poll_details_data(data){
+            let html_message = data['html_message'];
+            let chart_data = data['data'];
+            let chart_html = data['charts'];
+
+            if (chart_data === null || chart_data === undefined){
+                console.log("No data on chart");
+            }
+            let target_element = $('#result-content')
+            target_element.empty();
+            target_element.append(html_message);
+            target_element.append(chart_html);
+            process_chart_data(chart_data);
+
+        }
+
+        function vote(electableID, pollID){
+            let success_message_element = $('#success-message');
+            console.log(electableID);
+            $.ajax({
+                url: "{% url 'vote' %}",
+                headers: {'X-CSRFToken': csrftoken},
+                data: {'electableID': electableID, 'pollID': pollID},
+                type: "GET",
+                dataType: 'html',
+                success: function (data) {
+                    if (data) {
+                        /* Could also use json here to get multiple html to
+                        render in different places */
+                        success_message_element.html(data);
+                    }
+                }
+            });
+        }
+    </script>
+{% endblock %}

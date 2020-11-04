@@ -1,0 +1,44 @@
+Guidelines
+
+
+When a team member has finished a certain issue, the team member in question should move his issue to the "DONE" board.
+Inside the issue details, there should be a reference as to where the result of his work is found.
+The issue is not moved to "CLOSED" until another team member has reviewed the work.
+--------------------------------------------------------------------------------------------
+
+During a conflict, the team will vote on the matter and the majority dictates. 
+Since the team consists of 6 people an even division could happen and in that instance the Product owner will have the last say. 
+------------------------------------------------------------------------------------------------------------------------------------------------
+Version control
+
+This system will consist of a three git branch structure: 
+Temporary branches with the prefix feature/ or fix/, and will not be merged with develop unless one other team member finishes code review.
+Develop branches where new changes are pushed and tested. 
+Master branch, which will not be merged with unless code review of one other team member has been finished and agreed upon. 
+Before merging with master the team member must get another team member to review the code.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Coding guidelines:
+
+*Function names shall be written in lower-case with an underline between words(def my_function())
+*Function names shall be descriptive for its purpose
+*Variable names shall be written in lower-case with an underline between words(my_var)
+*Variable names shall be descriptive for its purpose
+*Global variable names shall be written in upper-case(VARIABLE)
+*Class names shall be written in CamelCase( MyClass, MyClassFoo))
+*Indentation shall be 4 white spaces
+*The maximum line length is 79 characters
+*Classes shall be single and kept in a eponymous document
+*Import command shall be separated by one line
+*After a comma there shall be a space. (Fx: (a, b, c) not ( a , b , c ))
+*There should be one line between each line in a function
+*Around strings there should be double quotation marks (i.e “My string”)
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Good practices:
+
+*Each function shall have a only one clear purpose
+*Each function shall include a descriptive doc-string and additional comments for clarifications
+*File names shall be written in lower case

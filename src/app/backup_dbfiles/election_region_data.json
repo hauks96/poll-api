@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "election_id": 1,
+    "region_id": 1
+  },
+  {
+    "id": 2,
+    "election_id": 1,
+    "region_id": 2
+  },
+  {
+    "id": 3,
+    "election_id": 1,
+    "region_id": 3
+  },
+  {
+    "id": 4,
+    "election_id": 2,
+    "region_id": 4
+  },
+  {
+    "id": 4,
+    "election_id": 2,
+    "region_id": 5
+  }
+]

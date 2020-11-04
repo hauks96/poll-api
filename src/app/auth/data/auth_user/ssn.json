@@ -1,0 +1,34 @@
+[
+  {
+    "id": 3,
+    "user_id": 2,
+    "region_id": 1,
+    "first_name": "Peter",
+    "last_name": "Pan",
+    "ssn": "123458787"
+  },
+  {
+    "id": 5,
+    "user_id": 3,
+    "region_id": 1,
+    "first_name": "AEgir",
+    "last_name": "Hauksson",
+    "ssn": "1010962469"
+  },
+  {
+    "id": 7,
+    "user_id": 4,
+    "region_id": 1,
+    "first_name": "hfgh",
+    "last_name": "fghfgh",
+    "ssn": "1010962468"
+  },
+  {
+    "id": 9,
+    "user_id": 5,
+    "region_id": 1,
+    "first_name": "AEgir",
+    "last_name": "Hauksson",
+    "ssn": "10109624610"
+  }
+]

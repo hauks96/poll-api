@@ -1,0 +1,25 @@
+{% load static %}
+<div class="table-title"><h1>{{ model.election.name }} Poll #{{ model.id }}</h1></div>
+<div class="table-title"><h3>By {{ model.organization.name }}</h3></div>
+<div id="candidates">
+    {% for candidate in model.election.candidates %}
+        <div class="single-candidate">
+            <div class="card" style="width: 15rem;">
+                <h5 class="card-title">{{ candidate.name }}</h5>
+                <img class="card-img-top" src="{{ candidate.image }}" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">{{ candidate.description }}</p>
+                    <div class="vote-button link-redirect" onclick="vote({{ candidate.id }}, {{ model.id }})"><i class="fas fa-vote-yea"></i> Vote</div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    {% if message %}
+        <div class="alert alert-warning">{{ message }}</div>
+    {% endif %}
+</div>
+
+<div id="success-message">
+
+</div>
+

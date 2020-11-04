@@ -1,0 +1,36 @@
+{% load static %}
+<div id="model-container">
+    <div id="model-table" class="scrollbar-info">
+        <div class="table-title"><h4>Elections</h4></div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Regions</th>
+                    <th scope="col">Candidates</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for model in models %}
+                    <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>
+                        <span>{{ model.name }}</span>
+                    </td>
+                    <td>
+                        {% for region in model.regions %}
+                            <span>{{ region.name }}, </span>
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for candidate in model.candidates %}
+                            <span>{{ candidate.name }}, </span>
+                        {% endfor %}
+                    </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

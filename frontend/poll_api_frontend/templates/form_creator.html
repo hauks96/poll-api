@@ -1,0 +1,13 @@
+{% load static %}
+<form id="argument-form" method="post" action="{% url 'register' %}">
+{% if not argument_dict.items %}
+    <div><h5>No additional arguments are required!</h5></div>
+{% else %}
+    {% for key, val in argument_dict.items %}
+        <div class="form-group">
+            <label for="{{ key }}"><b>{{ key }}</b></label>
+            <input type="{{ val }}" class="form-control" id="{{ key }}" name="{{ key }}" value="">
+        </div>
+    {% endfor %}
+{% endif %}
+</form>

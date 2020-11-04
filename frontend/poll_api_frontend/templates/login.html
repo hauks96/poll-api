@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+{% endblock %}
+{% block content %}
+    <div id="form-container">
+        <div id="title"><h1>Log in</h1></div>
+        <form id="argument-form" method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            {% for model in form_models %}
+                <div class="form-group">
+                    <label for="{{ model.name }}"><b>{{ model.name }}</b></label>
+                    <input type="{{ model.type }}" class="form-control" id="{{ model.name }}" name="{{ model.name }}" value="{{ model.value }}">
+                </div>
+            {% endfor %}
+        </form>
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'warning' %}
+                    <div class="alert alert-danger">{{ message }}</div>
+                {% elif message.tags == 'success' %}
+                    <div class="alert alert-success">{{ message }}</div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        <button form="argument-form" type="submit" class="btn btn-primary form-submit">Login</button>
+        <div id="register-href">Not a user yet?
+            <a href="{% url 'register' %}"><i class="fas fa-file-signature"></i> Register</a>
+        </div>
+    </div>
+{% endblock %}

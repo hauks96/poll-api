@@ -1,0 +1,24 @@
+#form-container {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    width: 40rem;
+    margin: auto;
+    padding: 20px;
+}
+
+#argument-form {
+    width: inherit;
+}
+
+.form-group {
+    width: 35rem;
+}
+
+.form-submit {
+    margin-bottom: 20px;
+}
+
+#title{
+    text-align: center;
+}

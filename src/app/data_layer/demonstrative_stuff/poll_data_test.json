@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "election_id": 1,
+    "source_id": 1,
+    "start_date": "2020-10-25",
+    "end_date": "2020-11-25"
+  },
+  {
+    "id": 3,
+    "election_id": 1,
+    "source_id": 1,
+    "start_date": "2020-10-25",
+    "end_date": "2020-11-25"
+  },
+  {
+    "id": 3,
+    "election_id": 1,
+    "source_id": 1,
+    "start_date": "2020-10-25",
+    "end_date": "2020-11-25"
+  },
+  {
+    "id": 3,
+    "election_id": 1,
+    "source_id": 1,
+    "start_date": "2020-10-25",
+    "end_date": "2020-11-25"
+  },
+  {
+    "id": 3,
+    "election_id": 1,
+    "source_id": 1,
+    "start_date": "2020-10-25",
+    "end_date": "2020-11-25"
+  },
+  {
+    "id": 3,
+    "election_id": 1,
+    "source_id": 1,
+    "start_date": "2020-10-25",
+    "end_date": "2020-11-25"
+  },
+  {
+    "id": 3,
+    "election_id": 1,
+    "source_id": 1,
+    "start_date": "2020-10-25",
+    "end_date": "2020-11-25"
+  }
+]

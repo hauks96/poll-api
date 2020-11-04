@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Anonymous User",
+    "info": "Anonymous User"
+  },
+  {
+    "id": 2,
+    "name": "Gallup",
+    "info": "We collect vote data"
+  },
+  {
+    "id": 3,
+    "name": "SurveyMonkey",
+    "info": "We are more reliable than Gallup"
+  }
+]

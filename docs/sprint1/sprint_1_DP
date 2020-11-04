@@ -1,0 +1,94 @@
+Meeting with TA nr 1:
+27.08.2020 12:40-13
+Introduction to the project and discussing sprint 1.
+
+
+
+Team meeting 1:
+27.08.2020 13-14:30
+
+This was a productive meeting where all group participants joined and participated.
+
+We set up gitlab, chose a scrum master and discussed the project further.
+
+Two working meetings per week were decided upon, on Tuesdays at 17:30 and on Thursdays right after the TA meeting, at 13:00ish. 
+
+Work on use cases was begun and divided between group participants.
+
+
+
+Team meeting 2
+01.09.20 17:00
+
+Present: Gunnhildur, Haraldur, Jóhann Hilmir, Aríel
+Notes: Aríel
+
+We covered and finished work on user cases, ending up with numerous cases in order to finalize them with our TA.
+
+Also worked toward finalizing our Project Overview, decided upon our code habits and our git branch 
+structure protocol, and developed our decision protocol for any upcoming decision making.
+
+
+
+TA meeting 2:
+03.09.20 12:40
+
+Everyone present
+
+- TA looked trough our user stories and had few comments
+- TA discussed the live poll and said it could be a nice features
+- We got more information on stakeholders and how to create the domain model
+
+
+Team meeting 3:
+03.09.20 13:00
+Everyone present
+
+- Decided to use django as a framework
+- Meeting on fridays at 10:00 are now fixed
+- Group members assign themselves to issues, so we know what everyone is doing
+- Everyone will watch lecture on domain models before meeting tomorrow
+- Will together decide on the domain model.
+
+
+Team meeting 4:
+08.09.20 18:00
+Present: Gunnhildur, Haraldur, Egill, Aríel, Ægir
+
+- Each group member looked trough the rubic to make sure we check all boxes
+- Also made sure everyone was happy with the project Overview
+- We made changes to the Domain model 
+
+
+Team meeting 5(online):
+10.09.20 12:20
+
+Sprint retrospective:
+
+- We could have met up earlier in order to properly sync in person, but have been working
+    diligently none the less. Have had slight troubles finding times to meet. 
+- We started working slightly ahead of ourselves in the Domain Model and had to backtrack 
+    slightly.
+
+- Decisions we made included:  
+    - Chossing Django as our framework
+    - Went over all user stories together in order to improve quality.
+    - Found better ways to work together and got into a more advanced quality
+    of communication.
+
+Ta meeting 3:
+Present: Gunnhildur, Haraldur, Egill, Aríel, Ægir, Jói
+
+Scrum master was chosen, Egill, who will be in contact with the TA (project owner).
+
+Went over how things went, and talked about how things could be improved, and what matter
+we will focus on improving. 
+
+We will be focusing on improving Task overview in Gitlab, and making sure tasks are assigned
+and done organized.
+
+Spoke on unit tests and will get further info on how they should be set up.
+
+Decided to hand in both domain models, "Detailed Domain Model" and "Abstract Domain Model".
+
+Additionally we confirmed next team meeting at Friday next, 10:00.

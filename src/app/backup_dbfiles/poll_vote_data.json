@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "poll_id": 1,
+    "candidate_id": 1,
+    "region_id": 1
+  },
+  {
+    "id": 2,
+    "poll_id": 1,
+    "candidate_id": 1,
+    "region_id": 1
+  },
+  {
+    "id": 3,
+    "poll_id": 1,
+    "candidate_id": 1,
+    "region_id": 2
+  },
+  {
+    "id": 4,
+    "poll_id": 1,
+    "candidate_id": 1,
+    "region_id": 2
+  },
+  {
+    "id": 5,
+    "poll_id": 1,
+    "candidate_id": 1,
+    "region_id": 1
+  },
+  {
+    "id": 6,
+    "poll_id": 1,
+    "candidate_id": 2,
+    "region_id": 1
+  },
+  {
+    "id": 7,
+    "poll_id": 1,
+    "candidate_id": 2,
+    "region_id": 3
+  },
+  {
+    "id": 8,
+    "poll_id": 5,
+    "candidate_id": 3,
+    "region_id": 4
+  },
+  {
+    "id": 9,
+    "poll_id": 5,
+    "candidate_id": 3,
+    "region_id": 4
+  },
+  {
+    "id": 10,
+    "poll_id": 2,
+    "candidate_id": 1,
+    "region_id": 3
+  }
+]

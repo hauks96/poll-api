@@ -1,0 +1,3 @@
+pip install pylint
+pip install coverage
+pip install websockets

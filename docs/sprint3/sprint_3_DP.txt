@@ -1,0 +1,48 @@
+TA meeting 5
+24.09.20
+Notes: Haraldur
+Present: Haraldur, Egill, Gunnhildur, Ægir, Aríel
+
+Þurfum að passa uppá að láta Friðrik vita ef við breytum einhverju á definition af done og fá það samþykkt.
+
+Hvað þarf að vera tilbúið í sprint 3:
+• Websockets
+    o The incoming message should be JSON format (i.e., a text string encoded in JSON)
+    o The op field in the incoming JSON message should contain the operation name
+    o The data field in the incoming JSON message should contain the parameters. Which parameters you expect depends on the operation
+• We will start with the following operations:
+    o getAllPoll (no parameters): returns an overview of the current polling status.
+    o getCandidates (no parameters): returns an overview of all candidates
+    o getPollPerRegion(regionIdentifier): returns the detailed polls for a single region/state
+    o getCandidateDetails (candidateIdentifier): returns detailed information on a candidate
+    o getRegionDetails(regionIdentifier): returns detailed information on a region
+• Endurbæta test cases 
+
+Team meeting 9
+25.09.20
+Notes: Haraldur
+Present: Egill, Gunnhildur, Haraldur
+
+Bíða eftir að fá staðfestingu á definition of done, og byrja þá að setja allt upp.
+
+Team meeting 10
+28.09.20
+Notes: Haraldur
+Present: Ægir, Gunnhildur, Haraldur, Egill
+
+Election was changed from representing a more generalized form for election, fx. "USA Presidential Election", to representing an individual election, fx. "USA Presidential Election 2020" & "USA Presidential Election 2016".
+Before thursday's meeting with PO: Finish rewriting our tests, so that they don't depend on data already in the datalayer. Make sure that the required operations are fully working.
+
+TA meeting 6
+01.10.20
+Notes: Haraldur
+Present: Ægir, Gunnhildur, Egill, Haraldur, Aríel
+
+Is getAllPolls maybe a little bit to complicated? Doe's it make sense to return inside an object an array of objects, or doe's it make more sense to return only an array of Id's wich then could gotten with a different call?
+It was decided that the operation we'll support for websocket is getCandidates and getCandidatesDetails. If there will be more time we might try and support more operations.
+
+Team meeting 11
+06.10.20
+Notes: Gunnhildur
+Present: Ægir, Gunnhildur, Egill
+Discussed remaining tasks left in order to complete our defenition of done. Went over what we have done to this point and discussed it a bit back and forth. Test coverage is good and everyone is happy.

@@ -1,0 +1,103 @@
+@import 'https://code.highcharts.com/css/highcharts.css';
+#argument-form {
+    margin: auto;
+    margin-top: 20px;
+    width: 40rem;
+}
+
+.message {
+    margin-top: 30px;
+}
+
+#home-icon {
+    margin: 0!important;
+    padding: 0!important;
+    font-size: 40px;
+    color: #34eaf5;
+}
+
+#main-container {
+    margin-top: 20px;
+}
+
+.nav-item {
+    margin-left: 30px;
+    font-size: large;
+    font-weight: 500;
+}
+
+.nav-focused {
+    color: #5e48fa!important;
+    font-weight: 700!important;
+}
+
+.nav-item a:hover {
+    color: #5e48fa!important;
+    font-weight: 700!important;
+}
+
+.poll-stats-details {
+    color: blue;
+    cursor: pointer;
+    font-size: large;
+}
+
+.poll-stats-details:hover {
+    transform: scale(1.1);
+}
+
+.table-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.highcharts-figure, .highcharts-data-table table {
+    width: 25rem;
+    height: 25rem;
+    display: inline-block;
+}
+
+.highcharts-data-table table {
+	font-family: Verdana, sans-serif;
+	border-collapse: collapse;
+	border: 1px solid #EBEBEB;
+	margin: 10px auto;
+	text-align: center;
+	width: 100%;
+	max-width: 500px;
+}
+
+.link-redirect {
+    color: blue;
+    cursor: pointer;
+}
+
+.link-redirect:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.vote-button {
+    font-size: larger;
+}
+
+.vote-button:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+}
+
+#candidates {
+    margin: auto;
+    margin-top: 20px;
+}
+
+.single-candidate {
+    display: inline-block;
+    width: fit-content;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.card-img-top{
+    max-height: 15rem;
+}

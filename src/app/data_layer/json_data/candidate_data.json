@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Trump",
+    "image": "https://cdn.theatlantic.com/thumbor/GZ6uWZVB6fD6Zn0Rmsi5PY_qLpA=/1920x1212/media/img/2016/05/03/WEL_McAdams_Trump_Opener_nobugger/original.jpg",
+    "info": "I am the worst"
+  },
+  {
+    "id": 2,
+    "name": "Biden",
+    "image": "https://static.politico.com/dims4/default/22f65e1/2147483647/resize/1160x%3E/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fb9%2Fc3%2F54a99abc4bd5832dea2d4cb25ffb%2Fgettyimages-1256156642-773.jpg",
+    "info": "Vote for me"
+  },
+  {
+    "id": 3,
+    "name": "Gudni Th",
+    "image": "https://www.nutiminn.is/wp-content/uploads/2019/02/Picture-2110.jpg",
+    "info": "buff bro"
+  },
+  {
+    "id": 4,
+    "name": "Maggi mix",
+    "image": "https://www.visir.is/i/35425BB575E0683C1FAB29F766E0E2A13717FB422D96EFF6F3B9B38147C3F0A8_713x0.jpg",
+    "info": "Gymmid gefur"
+  }
+]

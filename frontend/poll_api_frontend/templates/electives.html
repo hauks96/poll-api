@@ -1,0 +1,28 @@
+{% load static %}
+<div id="model-container">
+    <div id="model-table" class="scrollbar-info">
+        <div class="table-title"><h4>Electives</h4></div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for model in models %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                    <td>
+                        <span>{{ model.name }}</span>
+                    </td>
+                    <td>
+                        <span>{{ model.description }}</span>
+                    </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

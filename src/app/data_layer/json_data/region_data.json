@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Ohio",
+    "population": 453000,
+    "registeredVoters": 189200
+  },
+  {
+    "id": 2,
+    "name": "Alaska",
+    "population": 240000,
+    "registeredVoters": 58200
+  },
+  {
+    "id": 3,
+    "name": "Hawaii",
+    "population": 1500000,
+    "registeredVoters": 74200
+  },
+  {
+    "id": 4,
+    "name": "Su\u00f0urland",
+    "population": 37000,
+    "registeredVoters": 13000
+  },
+  {
+    "id": 5,
+    "name": "Austurland",
+    "population": 8000,
+    "registeredVoters": 3500
+  }
+]

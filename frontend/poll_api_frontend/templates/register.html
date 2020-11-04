@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+{% endblock %}
+{% block content %}
+    <div id="form-container">
+        <div id="title"><h1>Register</h1></div>
+        <form id="argument-form" method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            {% for form in form_models %}
+                <div class="form-group">
+                    <label for="{{ form.name }}"><b>{{ form.name }}</b></label>
+                    <input type="{{ form.type }}" class="form-control" id="{{ form.name }}" name="{{ form.name }}" value="{{ form.value }}">
+                </div>
+            {% endfor %}
+        </form>
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'warning' %}
+                    <div class="alert alert-danger">{{ message }}</div>
+                {% elif message.tags == 'success' %}
+                    <div class="alert alert-success">{{ message }}</div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        <button form="argument-form" type="submit" class="btn btn-primary form-submit">Register</button>
+    </div>
+{% endblock %}

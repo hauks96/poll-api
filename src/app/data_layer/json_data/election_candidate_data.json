@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "candidate_id": 1,
+    "election_id": 1
+  },
+  {
+    "id": 2,
+    "candidate_id": 2,
+    "election_id": 1
+  },
+  {
+    "id": 3,
+    "candidate_id": 3,
+    "election_id": 2
+  },
+  {
+    "id": 4,
+    "candidate_id": 4,
+    "election_id": 2
+  }
+]

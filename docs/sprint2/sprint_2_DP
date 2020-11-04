@@ -1,0 +1,50 @@
+Team meeting 6
+11.09.20 17:00
+
+Present: Everyone
+Notes: Egill
+
+The meeting was for the most part how to tend to plan sprint 2
+We decided on json as the standard file format
+We created a database model 
+We choose the user stories that we want to implement
+decided on definition of done
+
+
+Team meeting 7
+15.09.20 17:00
+
+Present: Everyone
+Notes: Egill
+
+We made some changes to the database to fulfill our use cases and vica versa.
+General discusion about the software architecture and implementation
+All use cases for sprint 2 have been diveded between team members and everyone will start breaking them down to tasks.
+
+
+TA meeting 4
+17.09.20
+Notes: Egill
+Present: Egill, Gunnhildur, Haraldur, Jóhann
+
+TA will mostly look at the master branch for commits. So it is important to push your branches frequently.
+The TA strongly advides us to use vanilla python for various of reasons and also informed us that we were the only group using django.
+We have decided to only use python and follow the three layerd architecture wheres we have the Data layer, logic layer and presentation layer
+which will be provided by the TA's.
+He also informed us that we will only be reciving strings encoded in JSON.
+There will be some changes to the usecases because the reasons above.
+In this sprint we will mostly be be focusing on getters and setters (create and read)
+NOTE FROM TA:"Keep it simple"
+
+
+Team meeting 8
+22.09.20
+Notes: Egill
+Present: Egill, Gunnhildur, Haraldur, Jóhann, Ægir
+
+Since project layout will be structured as three layered architecture so it was decided to
+implement method for each model in an indivitual class to prevent conflicts and keep the code diveded.
+All model now have a jsonify method to return json encoded objects
+All team members must write tests for their code and get at least 50% test coverage
+
+
