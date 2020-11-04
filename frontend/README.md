@@ -1,6 +1,6 @@
 _Author: Ægir Máni Hauksson, aegir19@ru.is_
 
-This part of the project is an addon I created to test the frontend.
+This part is an addon I created to display the backend implementation. The backend itself is a server hosted by the python module websocket and caleld in django using async websocket receiver.
 # FRONTEND: SETUP AND USAGE
 
 #### 1. Installing
