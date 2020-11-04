@@ -21,7 +21,7 @@ b) by manually pip installing the requirements from the pip_installs.txt file. \
 c) Go into the requirements.txt file and then if will promt you to install the requirements (works if your venv is activated)
 
 #### 2. Migrating database
-_There is not really any database dependecies but the django framework will not work correctly without the migration._
+_There is not really any database dependecies apart from the django messages but the django framework will not work correctly without the migration._
 1. While in the front_end_pollApi directory type in terminal \
     `py manage.py migrate`
 
