@@ -1,5 +1,6 @@
 _Author: Ægir Máni Hauksson_
 
+This part of the project is an addon I created to test the frontend.
 # FRONTEND: SETUP AND USAGE
 
 #### 1. Installing
