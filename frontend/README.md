@@ -18,7 +18,7 @@ This part is an addon I created to display the backend implementation. The backe
 3. Install requirements \
 a) Should be prompted by IDE, if not install manually with `$ pip install -r requirements.txt` \
 b) by manually pip installing the requirements from the pip_installs.txt file. \
-c) Go into the requirements.txt file and then if will promt you to install the requirements (works if your venv is activated)
+c) Go into the requirements.txt file and then it will promt you to install the requirements (works if your venv is activated)
 
 #### 2. Migrating database
 _There is not really any database dependecies apart from the django messages but the django framework will not work correctly without the migration._
