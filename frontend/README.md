@@ -72,5 +72,5 @@ There's an additioal login page, for ease of use. \
 ![image](readme_img/login.PNG)
 
 #### Register
-There's an additional registration page, for easy of use, that saves your inputs in case you made a mistake. \
+There's an additional registration page, for ease of use, that saves your inputs in case you made a mistake. \
 ![image](readme_img/register.PNG)
