@@ -1,6 +1,6 @@
 _Author: Ægir Máni Hauksson, aegir19@ru.is_
 
-This part is an addon I created to display the backend implementation. The backend itself (the group project) is a server hosted by the python module "websockets". In this implementation in django we communicate with the backend using an async websocket receiver. (PollApiGateway)
+This part is an addon I created to display the backend implementation. The backend itself (the group project) is a server hosted by the python module "websockets". In this implementation in django I implemented the communication with the backend using an async websocket receiver. (PollApiGateway)
 # FRONTEND: SETUP AND USAGE
 
 #### 1. Installing
